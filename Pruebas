@@ -122,7 +122,7 @@ _G.blessvsRunning = true
 --  BRANDING / THEME
 -- ============================================================
 BLESS_BRAND = "Bxyan Hub🕷️"
-BLESS_DISCORD = "discord.gg/https://discord.gg/Kzzs7HH8P"
+BLESS_DISCORD = "discord.gg/https://discord.gg/XkqRgtERt"
 BLESS_COLORS = {
 	BG = Color3.fromRGB(10,5,8),
 	PANEL = Color3.fromRGB(18,8,12),
@@ -276,17 +276,17 @@ ninoLastDisplayedSecond = nil
 setNinoTimeVisual = nil
 
 -- ============================================================
---  MUSIC GOD
+--  MÃšSICA TRYHARD
 -- ============================================================
-MUSICGODMusicEnabled = false
-MUSICGODMusicSound = nil
-setMUSICGODMusicVisual = nil
-MUSIC_GOD_ID = "rbxassetid://128715303988843"
+tryhardMusicEnabled = false
+tryhardMusicSound = nil
+setTryhardMusicVisual = nil
+TRYHARD_MUSIC_ID = "rbxassetid://135106901428553"
 
-BreakonDayMusicEnabled = false
-BreakonDayMusicSound = nil
-setBreakonDayMusicVisual = nil
-BreakonDay_MUSIC_ID = "rbxassetid://116873078212017"
+tryhard2MusicEnabled = false
+tryhard2MusicSound = nil
+setTryhard2MusicVisual = nil
+TRYHARD2_MUSIC_ID = "rbxassetid://77142753938657"
 
 tryhardDefMusicEnabled = false
 tryhardDefMusicSound = nil
@@ -323,54 +323,54 @@ brasil2Sound = nil
 setBrasil2Visual = nil
 BRASIL2_ID = "rbxassetid://135750430892149"
 
-function startMUSICGOD()
-	if  then pcall(function() MUSICGODSound:Stop();MUSICGODSound:Destroy() end);MUSICGODSound=nil end
+function startTryhardMusic()
+	if tryhardMusicSound then pcall(function() tryhardMusicSound:Stop();tryhardMusicSound:Destroy() end);tryhardMusicSound=nil end
 	local snd=Instance.new("Sound")
-	snd.SoundId=MUSIC_GOD_ID
+	snd.SoundId=TRYHARD_MUSIC_ID
 	snd.Volume=0.7
 	snd.Looped=true
-	snd.Name="Bxyan Hub🕷️MUSICGOD"
+	snd.Name="blessvsTryhardMusic"
 	snd.Parent=SoundService
 	pcall(function() snd:Play() end)
-	MUSICGODSound=snd
+	tryhardMusicSound=snd
 end
 
-function stopMUSICGOD()
-	if MUSICGODSound then
-		pcall(function() MUSICGODSound:Stop();tryhardMusicSound:Destroy() end)
-		MUSICGODSound=nil
+function stopTryhardMusic()
+	if tryhardMusicSound then
+		pcall(function() tryhardMusicSound:Stop();tryhardMusicSound:Destroy() end)
+		tryhardMusicSound=nil
 	end
 end
 
-function setMUSICGOD(on)
-	MUSICGODEnabled=on
-	if setMUSICGODVisual then setMUSICGODVisual(on) end
-	if on then startMUSICGOD() else stopMUSICGOD() end
+function setTryhardMusic(on)
+	tryhardMusicEnabled=on
+	if setTryhardMusicVisual then setTryhardMusicVisual(on) end
+	if on then startTryhardMusic() else stopTryhardMusic() end
 end
 
-function startBreakonDay()
-	if BreakonDaySound then pcall(function() BreakonDaySound:Stop();BreakonDaySound:Destroy() end);BreakonDaySound=nil end
+function startTryhard2Music()
+	if tryhard2MusicSound then pcall(function() tryhard2MusicSound:Stop();tryhard2MusicSound:Destroy() end);tryhard2MusicSound=nil end
 	local snd=Instance.new("Sound")
-	snd.SoundId=BreakonDay_MUSIC_ID
+	snd.SoundId=TRYHARD2_MUSIC_ID
 	snd.Volume=0.7
 	snd.Looped=true
-	snd.Name="Bxyan Hub🕷️BreakonDay"
+	snd.Name="blessvsTryhard2Music"
 	snd.Parent=SoundService
 	pcall(function() snd:Play() end)
-	BreakonDaySound=snd
+	tryhard2MusicSound=snd
 end
 
-function stopBreakonDay()
-	if breakondaySound then
-		pcall(function() BreakonDaySound:Stop();BreakonDaySound:Destroy() end)
-		BreakonDaySound=nil
+function stopTryhard2Music()
+	if tryhard2MusicSound then
+		pcall(function() tryhard2MusicSound:Stop();tryhard2MusicSound:Destroy() end)
+		tryhard2MusicSound=nil
 	end
 end
 
-function setBreakonDay(on)
-	BreakonDayEnabled=on
-	if setBreakonDayVisual then setBreakonDayVisual(on) end
-	if on then startBreakonDay() else stopBreakonDay() end
+function setTryhard2Music(on)
+	tryhard2MusicEnabled=on
+	if setTryhard2MusicVisual then setTryhard2MusicVisual(on) end
+	if on then startTryhard2Music() else stopTryhard2Music() end
 end
 
 function startTryhardDefMusic()
