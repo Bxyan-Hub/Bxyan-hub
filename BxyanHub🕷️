@@ -2781,7 +2781,7 @@ function playCandyIntro(gui, main, miniBtn)
 	if miniBtn then miniBtn.Visible = false end
 
 	-- ==== Intro ====
-	local INTRO_MUSIC_URL = "https://files.catbox.moe/rcgr9f.mp3" -- Song 3
+	local INTRO_MUSIC_URL = "https://files.catbox.moe/siru6c.mp3" -- Song 3
 
 	local parent = LP:FindFirstChildOfClass("PlayerGui") or LP:WaitForChild("PlayerGui",3)
 	pcall(function()
