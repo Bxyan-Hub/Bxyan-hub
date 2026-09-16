@@ -278,15 +278,15 @@ setNinoTimeVisual = nil
 -- ============================================================
 --  MUSIC GOD
 -- ============================================================
-MUSIC GODMusicEnabled = false
-MUSIC GODMusicSound = nil
-setMUSIC GODMusicVisual = nil
+MUSICGODMusicEnabled = false
+MUSICGODMusicSound = nil
+setMUSICGODMusicVisual = nil
 MUSIC_GOD_ID = "rbxassetid://128715303988843"
 
-Break on DayMusicEnabled = false
-Break on DayMusicSound = nil
-setBreak on DayMusicVisual = nil
-Break on Day_MUSIC_ID = "rbxassetid://116873078212017"
+BreakonDayMusicEnabled = false
+BreakonDayMusicSound = nil
+setBreakonDayMusicVisual = nil
+BreakonDay_MUSIC_ID = "rbxassetid://116873078212017"
 
 tryhardDefMusicEnabled = false
 tryhardDefMusicSound = nil
