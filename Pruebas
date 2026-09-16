@@ -323,54 +323,54 @@ brasil2Sound = nil
 setBrasil2Visual = nil
 BRASIL2_ID = "rbxassetid://135750430892149"
 
-function startTryhardMusic()
-	if  then pcall(function() tryhardMusicSound:Stop();tryhardMusicSound:Destroy() end);tryhardMusicSound=nil end
+function startMUSICGOD()
+	if  then pcall(function() MUSICGODSound:Stop();MUSICGODSound:Destroy() end);MUSICGODSound=nil end
 	local snd=Instance.new("Sound")
-	snd.SoundId=TRYHARD_MUSIC_ID
+	snd.SoundId=MUSIC_GOD_ID
 	snd.Volume=0.7
 	snd.Looped=true
-	snd.Name="blessvsTryhardMusic"
+	snd.Name="Bxyan Hub🕷️MUSICGOD"
 	snd.Parent=SoundService
 	pcall(function() snd:Play() end)
-	tryhardMusicSound=snd
+	MUSICGODSound=snd
 end
 
-function stopTryhardMusic()
-	if tryhardMusicSound then
-		pcall(function() tryhardMusicSound:Stop();tryhardMusicSound:Destroy() end)
-		tryhardMusicSound=nil
+function stopMUSICGOD()
+	if MUSICGODSound then
+		pcall(function() MUSICGODSound:Stop();tryhardMusicSound:Destroy() end)
+		MUSICGODSound=nil
 	end
 end
 
-function setTryhardMusic(on)
-	tryhardMusicEnabled=on
-	if setTryhardMusicVisual then setTryhardMusicVisual(on) end
-	if on then startTryhardMusic() else stopTryhardMusic() end
+function setMUSICGOD(on)
+	MUSICGODEnabled=on
+	if setMUSICGODVisual then setMUSICGODVisual(on) end
+	if on then startMUSICGOD() else stopMUSICGOD() end
 end
 
-function startTryhard2Music()
-	if tryhard2MusicSound then pcall(function() tryhard2MusicSound:Stop();tryhard2MusicSound:Destroy() end);tryhard2MusicSound=nil end
+function startBreakonDay()
+	if BreakonDaySound then pcall(function() BreakonDaySound:Stop();BreakonDaySound:Destroy() end);BreakonDaySound=nil end
 	local snd=Instance.new("Sound")
-	snd.SoundId=TRYHARD2_MUSIC_ID
+	snd.SoundId=BreakonDay_MUSIC_ID
 	snd.Volume=0.7
 	snd.Looped=true
-	snd.Name="blessvsTryhard2Music"
+	snd.Name="Bxyan Hub🕷️BreakonDay"
 	snd.Parent=SoundService
 	pcall(function() snd:Play() end)
-	tryhard2MusicSound=snd
+	BreakonDaySound=snd
 end
 
-function stopTryhard2Music()
-	if tryhard2MusicSound then
-		pcall(function() tryhard2MusicSound:Stop();tryhard2MusicSound:Destroy() end)
-		tryhard2MusicSound=nil
+function stopBreakonDay()
+	if breakondaySound then
+		pcall(function() BreakonDaySound:Stop();BreakonDaySound:Destroy() end)
+		BreakonDaySound=nil
 	end
 end
 
-function setTryhard2Music(on)
-	tryhard2MusicEnabled=on
-	if setTryhard2MusicVisual then setTryhard2MusicVisual(on) end
-	if on then startTryhard2Music() else stopTryhard2Music() end
+function setBreakonDay(on)
+	BreakonDayEnabled=on
+	if setBreakonDayVisual then setBreakonDayVisual(on) end
+	if on then startBreakonDay() else stopBreakonDay() end
 end
 
 function startTryhardDefMusic()
