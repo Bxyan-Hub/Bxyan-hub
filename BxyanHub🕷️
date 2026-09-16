@@ -2785,13 +2785,13 @@ function playCandyIntro(gui, main, miniBtn)
 
 	local parent = LP:FindFirstChildOfClass("PlayerGui") or LP:WaitForChild("PlayerGui",3)
 	pcall(function()
-		for _, n in ipairs({"VioletGifIntroVertical","RubyGifIntroVertical","BlessVSGifIntroVertical","IrishGifIntroVertical","SoulHubIntro","BlessVSIntro"}) do
+		for _, n in ipairs({"VioletGifIntroVertical","RubyGifIntroVertical","Bxyan Hub","Bxyan Hub","SoulHubIntro","Bxyan Hub🕷️"}) do
 			local old = parent:FindFirstChild(n); if old then old:Destroy() end
 		end
 	end)
 
 	local introGui = Instance.new("ScreenGui")
-	introGui.Name = "BlessVSIntro"
+	introGui.Name = "Bxyan Hub🕷️"
 	introGui.ResetOnSpawn = false
 	introGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 	introGui.DisplayOrder = 1000000
@@ -2873,12 +2873,12 @@ function playCandyIntro(gui, main, miniBtn)
 
 	local title = Instance.new("TextLabel", center)
 	title.Size = UDim2.new(1,0,0,86); title.Position = UDim2.new(0,0,0,53); title.BackgroundTransparency = 1
-	title.Text = "Bless.vs"; title.TextColor3 = Color3.fromRGB(220,20,60); title.Font = Enum.Font.GothamBlack; title.TextSize = 72
+	title.Text = "Bxyan Hub🕷️"; title.TextColor3 = Color3.fromRGB(220,20,60); title.Font = Enum.Font.GothamBlack; title.TextSize = 72
 	title.TextTransparency = 1; title.TextStrokeTransparency = 1; title.TextStrokeColor3 = Color3.fromRGB(80,0,15); title.ZIndex = 43
 
 	local subtitle = Instance.new("TextLabel", center)
 	subtitle.Size = UDim2.new(1,0,0,26); subtitle.Position = UDim2.new(0,0,0,152); subtitle.BackgroundTransparency = 1
-	subtitle.Text = "Migizin"; subtitle.TextColor3 = Color3.fromRGB(255,160,175); subtitle.Font = Enum.Font.GothamMedium; subtitle.TextSize = 19; subtitle.TextTransparency = 1; subtitle.ZIndex = 43
+	subtitle.Text = "Bxyan"; subtitle.TextColor3 = Color3.fromRGB(255,160,175); subtitle.Font = Enum.Font.GothamMedium; subtitle.TextSize = 19; subtitle.TextTransparency = 1; subtitle.ZIndex = 43
 
 	local introCompleteEvent = Instance.new("BindableEvent")
 	local introActive = true
