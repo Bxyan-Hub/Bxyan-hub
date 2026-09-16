@@ -8,9 +8,9 @@ if not game:IsLoaded() then game.Loaded:Wait() end
 -- ============================================================
 task.spawn(function()
 	local env = (getgenv and getgenv()) or _G
-	env.__BLESS_HIGH_PING_RUN = (env.__BLESS_HIGH_PING_RUN or 0) + 1
-	local thisRun = env.__BLESS_HIGH_PING_RUN
-	env.__BLESS_INTRO_FINISHED_RUN = 0
+	env.__BXYAN_HIGH_PING_RUN = (env.__BXYAN_HIGH_PING_RUN or 0) + 1
+	local thisRun = env.__BXYAN_HIGH_PING_RUN
+	env.__BXYAN_INTRO_FINISHED_RUN = 0
 	local shown = false
 
 	local function getPingMilliseconds()
@@ -35,10 +35,10 @@ task.spawn(function()
 		local Players = game:GetService("Players")
 		local player = Players.LocalPlayer
 		local playerGui = player and player:FindFirstChildOfClass("PlayerGui")
-		pcall(function() local old = CoreGui:FindFirstChild("BlessHighPingAlert"); if old then old:Destroy() end end)
-		pcall(function() local old = playerGui and playerGui:FindFirstChild("BlessHighPingAlert"); if old then old:Destroy() end end)
+		pcall(function() local old = CoreGui:FindFirstChild("BxyanHighPingAlert"); if old then old:Destroy() end end)
+		pcall(function() local old = playerGui and playerGui:FindFirstChild("BxyanHighPingAlert"); if old then old:Destroy() end end)
 		local gui = Instance.new("ScreenGui")
-		gui.Name = "BlessHighPingAlert"
+		gui.Name = "BxyanHighPingAlert"
 		gui.ResetOnSpawn = false
 		gui.IgnoreGuiInset = false
 		gui.DisplayOrder = 10000
@@ -57,8 +57,8 @@ task.spawn(function()
 		bar.ClipsDescendants = true
 		bar.ZIndex = 100
 		bar.Parent = gui
-		local corner = Instance.new("UICorner"); corner.CornerRadius = UDim.new(0, 11); corner.Parent = bar
-		local stroke = Instance.new("UIStroke"); stroke.Color = Color3.fromRGB(255, 12, 12); stroke.Transparency = 0.2; stroke.Thickness = 1; stroke.Parent = bar
+		local corner = Instance.new("UICorner"); corner.CornerRadius = UDim.new(0, 00); corner.Parent = bar
+		local stroke = Instance.new("UIStroke"); stroke.Color = Color3.fromRGB(255, 0, 0); stroke.Transparency = 0.2; stroke.Thickness = 1; stroke.Parent = bar
 		local gradient = Instance.new("UIGradient")
 		gradient.Color = ColorSequence.new({
 			ColorSequenceKeypoint.new(0, Color3.fromRGB(120, 0, 0)),
@@ -72,7 +72,7 @@ task.spawn(function()
 		label.Size = UDim2.new(1, -20, 1, 0)
 		label.Font = Enum.Font.GothamBold
 		label.Text = "high ping! Your ping is more than 150."
-		label.TextColor3 = Color3.fromRGB(255, 55, 55)
+		label.TextColor3 = Color3.fromRGB(255, 255,255)
 		label.TextSize = 13
 		label.TextStrokeColor3 = Color3.fromRGB(55, 0, 0)
 		label.TextStrokeTransparency = 0.55
@@ -90,7 +90,7 @@ task.spawn(function()
 
 	-- Esperar a que el juego cargue y haya datos de ping
 	task.wait(5)
-	while env.__BLESS_HIGH_PING_RUN == thisRun and not shown do
+	while env.__BXYAN_HIGH_PING_RUN == thisRun and not shown do
 		local ping = getPingMilliseconds()
 		if ping and ping > 150 then
 			shown = true
@@ -103,8 +103,8 @@ end)
 Players,RunService,UIS,TS,Lighting,HS,SoundService = game:GetService("Players"),game:GetService("RunService"),game:GetService("UserInputService"),game:GetService("TweenService"),game:GetService("Lighting"),game:GetService("HttpService"),game:GetService("SoundService")
 CoreGui = game:GetService("CoreGui")
 LP = Players.LocalPlayer
-UI_NAME = "blessvs"
-MOBILE_UI_NAME = "blessvsMobileButtons"
+UI_NAME = "BxyanHub"
+MOBILE_UI_NAME = "BxyanHubMobileButtons"
 pcall(function()
 	local old=CoreGui:FindFirstChild(UI_NAME);if old then old:Destroy() end
 	local oldMobile=CoreGui:FindFirstChild(MOBILE_UI_NAME);if oldMobile then oldMobile:Destroy() end
@@ -116,13 +116,13 @@ pcall(function()
 		local oldMobile=pg:FindFirstChild(MOBILE_UI_NAME);if oldMobile then oldMobile:Destroy() end
 	end
 end)
-_G.blessvsRunning = true
+_G.BxyanHubRunning = true
 
 -- ============================================================
 --  BRANDING / THEME
 -- ============================================================
 BLESS_BRAND = "BxyanHub🕷️"
-BLESS_DISCORD = "discord.gg/https://discord.gg/XkqRgtERt"
+BLESS_DISCORD = "discord.gg/XkqRgtERt"
 BLESS_COLORS = {
 	BG = Color3.fromRGB(10,5,8),
 	PANEL = Color3.fromRGB(18,8,12),
@@ -1315,7 +1315,7 @@ function setupSpeedIndicator(char,player)
 	if player==LP then
 		local tag=Instance.new("TextLabel",bb)
 		tag.Size=UDim2.new(1,0,0,22);tag.Position=UDim2.new(0,0,0,0);tag.BackgroundTransparency=1
-		tag.Text=".gg/blessvs";tag.TextColor3=BLESS_COLORS.ICE
+		tag.Text=".gg/XkqRgtERt";tag.TextColor3=BLESS_COLORS.ICE
 		tag.Font=Enum.Font.GothamBlack;tag.TextSize=15;tag.TextXAlignment=Enum.TextXAlignment.Center
 		tag.TextStrokeTransparency=0.32;tag.TextStrokeColor3=Color3.fromRGB(0,0,0)
 	end
@@ -3153,7 +3153,7 @@ function buildGui()
 		Instance.new("UICorner",close).CornerRadius=UDim.new(0,7)
 		local closeStroke=Instance.new("UIStroke",close);closeStroke.Color=ACCENT;closeStroke.Thickness=1;closeStroke.Transparency=0.34
 		local disc=Instance.new("TextLabel",panel)
-		disc.Size=UDim2.new(1,-24,0,20);disc.Position=UDim2.new(0,12,0,48);disc.BackgroundTransparency=1;disc.Text=".gg/blessvs";disc.TextColor3=ICE;disc.Font=Enum.Font.GothamBold;disc.TextSize=12;disc.TextXAlignment=Enum.TextXAlignment.Center;disc.ZIndex=61
+		disc.Size=UDim2.new(1,-24,0,20);disc.Position=UDim2.new(0,12,0,48);disc.BackgroundTransparency=1;disc.Text=".gg/XkqRgtERt";disc.TextColor3=ICE;disc.Font=Enum.Font.GothamBold;disc.TextSize=12;disc.TextXAlignment=Enum.TextXAlignment.Center;disc.ZIndex=61
 		local reset=Instance.new("TextButton",panel)
 		reset.Size=UDim2.new(1,-24,0,48);reset.Position=UDim2.new(0,12,0,78);reset.BackgroundColor3=ACCENT;reset.BorderSizePixel=0;reset.Text="RESET";reset.TextColor3=Color3.fromRGB(0,0,0);reset.Font=Enum.Font.GothamBlack;reset.TextSize=20;reset.AutoButtonColor=false;reset.ZIndex=61
 		Instance.new("UICorner",reset).CornerRadius=UDim.new(0,12)
@@ -3218,7 +3218,7 @@ function buildGui()
 		dragBtn.Size=UDim2.new(1,-34,1,0);dragBtn.BackgroundTransparency=1;dragBtn.Text="";dragBtn.AutoButtonColor=false;dragBtn.Active=true;dragBtn.ZIndex=62
 		local dot=Instance.new("Frame",header);dot.Size=UDim2.new(0,8,0,8);dot.Position=UDim2.new(0,12,0.5,-4);dot.BackgroundColor3=ACCENT;dot.BorderSizePixel=0;dot.ZIndex=63;Instance.new("UICorner",dot).CornerRadius=UDim.new(1,0)
 		local title=Instance.new("TextLabel",header)
-		title.Size=UDim2.new(0,104,1,0);title.Position=UDim2.new(0,26,0,0);title.BackgroundTransparency=1;title.Text="Bless Lagger";title.TextColor3=W;title.Font=Enum.Font.GothamBlack;title.TextSize=12;title.TextXAlignment=Enum.TextXAlignment.Left;title.ZIndex=63
+		title.Size=UDim2.new(0,104,1,0);title.Position=UDim2.new(0,26,0,0);title.BackgroundTransparency=1;title.Text="Bxyan Lagger🕷️";title.TextColor3=W;title.Font=Enum.Font.GothamBlack;title.TextSize=12;title.TextXAlignment=Enum.TextXAlignment.Left;title.ZIndex=63
 		local disc=Instance.new("TextLabel",header)
 		disc.Size=UDim2.new(0,104,1,0);disc.Position=UDim2.new(1,-138,0,0);disc.BackgroundTransparency=1;disc.Text=BLESS_DISCORD;disc.TextColor3=ICE;disc.Font=Enum.Font.Gotham;disc.TextSize=9;disc.TextXAlignment=Enum.TextXAlignment.Right;disc.ZIndex=63
 		local close=Instance.new("TextButton",header)
@@ -3339,15 +3339,15 @@ function buildGui()
 		dragBtn.Size=UDim2.new(1,-42,1,0);dragBtn.BackgroundTransparency=1;dragBtn.Text="";dragBtn.AutoButtonColor=false;dragBtn.ZIndex=62
 		local dot=Instance.new("Frame",header);dot.Size=UDim2.new(0,7,0,7);dot.Position=UDim2.new(0,12,0.5,-3);dot.BackgroundColor3=ACCENT;dot.BorderSizePixel=0;dot.ZIndex=63;Instance.new("UICorner",dot).CornerRadius=UDim.new(1,0)
 		local title=Instance.new("TextLabel",header)
-		title.Size=UDim2.new(1,-70,1,0);title.Position=UDim2.new(0,26,0,0);title.BackgroundTransparency=1;title.Text="Fondos Bless";title.TextColor3=W;title.Font=Enum.Font.GothamBlack;title.TextSize=13;title.TextXAlignment=Enum.TextXAlignment.Left;title.ZIndex=63
+		title.Size=UDim2.new(1,-70,1,0);title.Position=UDim2.new(0,26,0,0);title.BackgroundTransparency=1;title.Text="Bxyan Fondos🕷️";title.TextColor3=W;title.Font=Enum.Font.GothamBlack;title.TextSize=13;title.TextXAlignment=Enum.TextXAlignment.Left;title.ZIndex=63
 		local close=Instance.new("TextButton",header)
 		close.Size=UDim2.new(0,26,0,24);close.Position=UDim2.new(1,-32,0.5,-12);close.BackgroundColor3=CARD;close.BorderSizePixel=0;close.Text="X";close.TextColor3=ACCENT;close.Font=Enum.Font.GothamBlack;close.TextSize=12;close.AutoButtonColor=false;close.ZIndex=64
 		Instance.new("UICorner",close).CornerRadius=UDim.new(0,7)
 		local closeStroke=Instance.new("UIStroke",close);closeStroke.Color=ACCENT;closeStroke.Thickness=1;closeStroke.Transparency=0.34
 		-- {id, label}
 		local fondosIds={
-			{"76582249427748",  "Fondo 1"},
-			{"131388128481309", "Fondo 2"},
+			{"9949802901",  "Fondo 1"},
+			{"11721965435", "Fondo 2"},
 			{"100964231395820", "Fondo 3"},
 			{"139820934352493", "Fondo 4"},
 			{"106050493494582", "Original"},
@@ -3424,7 +3424,7 @@ function buildGui()
 	-- Imagen de fondo (ZIndex=1 para que sea la base visible)
 	local bgImg=Instance.new("ImageLabel",main)
 	bgImg.Size=UDim2.new(1,0,1,0);bgImg.Position=UDim2.new(0,0,0,0)
-	bgImg.Image="rbxassetid://106050493494582"
+	bgImg.Image="rbxassetid://122866363664016"
 	bgImgRef=bgImg
 	bgImg.ImageTransparency=0.0;bgImg.ScaleType=Enum.ScaleType.Crop
 	bgImg.BackgroundColor3=BG;bgImg.BackgroundTransparency=0;bgImg.BorderSizePixel=0;bgImg.ZIndex=1
@@ -3578,7 +3578,7 @@ function buildGui()
 	-- Logo con imagen de fondo del hub
 	local logo=Instance.new("ImageLabel",hdr)
 	logo.Size=UDim2.new(0,LOGO,0,LOGO);logo.Position=UDim2.new(0,12,0,IsMobile and 11 or 12);logo.BackgroundColor3=Color3.fromRGB(20,5,8);logo.BorderSizePixel=0;logo.ZIndex=3
-	logo.Image="rbxassetid://106050493494582";logo.ImageColor3=Color3.fromRGB(255,255,255);logo.ScaleType=Enum.ScaleType.Crop
+	logo.Image="rbxassetid://122866363664016";logo.ImageColor3=Color3.fromRGB(255,255,255);logo.ScaleType=Enum.ScaleType.Crop
 	Instance.new("UICorner",logo).CornerRadius=UDim.new(0,8)
 	local logoStroke=Instance.new("UIStroke",logo);logoStroke.Color=ACCENT;logoStroke.Thickness=1.5;logoStroke.Transparency=0.1
 	-- TÃ­tulo con gradiente de texto
@@ -3619,7 +3619,7 @@ function buildGui()
 	userNameLbl.ZIndex=7
 	local closeBtn=Instance.new("TextButton",hdr)
 	closeBtn.Size=UDim2.new(0,IsMobile and 26 or 30,0,IsMobile and 26 or 30);closeBtn.Position=UDim2.new(1,IsMobile and -34 or -42,0,IsMobile and 13 or 14);closeBtn.BackgroundColor3=Color3.fromRGB(160,20,35);closeBtn.BorderSizePixel=0;closeBtn.ZIndex=4
-	closeBtn.Text="âœ•";closeBtn.TextColor3=Color3.fromRGB(255,220,220);closeBtn.Font=Enum.Font.GothamBlack;closeBtn.TextSize=IsMobile and 14 or 16
+	closeBtn.Text="X";closeBtn.TextColor3=Color3.fromRGB(255,255,255);closeBtn.Font=Enum.Font.GothamBlack;closeBtn.TextSize=IsMobile and 14 or 16
 	Instance.new("UICorner",closeBtn).CornerRadius=UDim.new(1,0)
 	local closeBtnStroke=Instance.new("UIStroke",closeBtn);closeBtnStroke.Color=ACCENT;closeBtnStroke.Thickness=2;closeBtnStroke.Transparency=0.05
 	local lockBtn=Instance.new("TextButton",hdr)
@@ -3636,7 +3636,7 @@ function buildGui()
 	setTopLockVisual=function(on)
 		lockBtn.BackgroundColor3=on and ACCENT or Color3.fromRGB(28,10,16)
 		lockBtn.TextColor3=on and Color3.fromRGB(255,255,255) or Color3.fromRGB(255,180,180)
-		lockBtn.Text=on and "ðŸ”’ LOCK" or "ðŸ”“ LOCK"
+		lockBtn.Text=on and "🔒LOCK" or "🔓 LOCK"
 		lockStroke.Color=on and ICE or ACCENT
 		lockStroke.Transparency=on and 0 or 0.1
 	end
@@ -3645,7 +3645,7 @@ function buildGui()
 	local divGrad=Instance.new("UIGradient",divider);divGrad.Color=ColorSequence.new({ColorSequenceKeypoint.new(0,Color3.fromRGB(0,0,0)),ColorSequenceKeypoint.new(0.3,ACCENT),ColorSequenceKeypoint.new(0.7,ICE),ColorSequenceKeypoint.new(1,Color3.fromRGB(0,0,0))})
 	local miniBtn=Instance.new("TextButton",gui)
 	miniBtn.Size=UDim2.new(0,116,0,32);miniBtn.Position=UDim2.new(0,26,0,26);miniBtn.BackgroundColor3=PANEL;miniBtn.BorderSizePixel=0
-	miniBtn.Text="â˜  bless.vs";miniBtn.TextColor3=ACCENT;miniBtn.Font=Enum.Font.GothamBlack;miniBtn.TextSize=12;miniBtn.ZIndex=20;miniBtn.Visible=false
+	miniBtn.Text="Bxyan Hub🕷️";miniBtn.TextColor3=ACCENT;miniBtn.Font=Enum.Font.GothamBlack;miniBtn.TextSize=12;miniBtn.ZIndex=20;miniBtn.Visible=false
 	Instance.new("UICorner",miniBtn).CornerRadius=UDim.new(0,10)
 	local miniBtnStroke=Instance.new("UIStroke",miniBtn);miniBtnStroke.Color=ACCENT;miniBtnStroke.Thickness=1.5;miniBtnStroke.Transparency=0.15
 	local miniStroke=Instance.new("UIStroke",miniBtn);miniStroke.Color=ACCENT;miniStroke.Thickness=1;miniStroke.Transparency=0.2
@@ -3928,7 +3928,7 @@ function buildGui()
 	do local row=mkRow(mainPage,ROW_H);mkLabel(row,"Reset Mobile Buttons");local btn=Instance.new("TextButton",row);btn.Size=UDim2.new(0,86,0,22);btn.Position=UDim2.new(1,-94,0.5,-11);btn.BackgroundColor3=ACCENT;btn.BorderSizePixel=0;btn.Text="RESET";btn.TextColor3=Color3.fromRGB(0,0,0);btn.Font=Enum.Font.GothamBlack;btn.TextSize=10;btn.AutoButtonColor=false;btn.ZIndex=3;Instance.new("UICorner",btn).CornerRadius=UDim.new(1,0);local rst=Instance.new("UIStroke",btn);rst.Color=ACCENT;rst.Thickness=1;rst.Transparency=0.34;btn.MouseEnter:Connect(function() TS:Create(rst,TweenInfo.new(0.12),{Color=ICE,Transparency=0.02}):Play() end);btn.MouseLeave:Connect(function() TS:Create(rst,TweenInfo.new(0.12),{Color=ACCENT,Transparency=0.34}):Play() end);btn.Activated:Connect(function() if _anyKeyListening then return end;resetMobileButtonLayout();saveConfig() end) end
 	do local row=mkRow(mainPage,ROW_H);mkLabel(row,"Hide UI Key");mkKB(row,KB.GuiHide,function(k,isGp) if isGp then KB.GuiHide.gp=k;KB.GuiHide.kb=nil else KB.GuiHide.kb=k;KB.GuiHide.gp=nil end;saveConfig() end) end
 
-		do local row=mkRow(mainPage,ROW_H);mkLabel(row,"Fondos Bless");local btn=Instance.new("TextButton",row);btn.Size=UDim2.new(0,86,0,22);btn.Position=UDim2.new(1,-94,0.5,-11);btn.BackgroundColor3=ACCENT;btn.BorderSizePixel=0;btn.Text="OPEN";btn.TextColor3=Color3.fromRGB(0,0,0);btn.Font=Enum.Font.GothamBlack;btn.TextSize=10;btn.AutoButtonColor=false;btn.ZIndex=3;Instance.new("UICorner",btn).CornerRadius=UDim.new(1,0);local opn=Instance.new("UIStroke",btn);opn.Color=ICE;opn.Thickness=1;opn.Transparency=0.34;btn.MouseEnter:Connect(function() TS:Create(opn,TweenInfo.new(0.12),{Transparency=0.02}):Play() end);btn.MouseLeave:Connect(function() TS:Create(opn,TweenInfo.new(0.12),{Transparency=0.34}):Play() end);setFondosBtnText=function(open) btn.Text=open and "CLOSE" or "OPEN" end;setFondosBtnText(fondosPanelOpen);btn.Activated:Connect(function() if _anyKeyListening then return end;if setFondosPanelVisible then setFondosPanelVisible(not fondosPanelOpen) end end) end	do local row=mkRow(mainPage,ROW_H);mkLabel(row,"Bless Lagger");local btn=Instance.new("TextButton",row);btn.Size=UDim2.new(0,86,0,22);btn.Position=UDim2.new(1,-94,0.5,-11);btn.BackgroundColor3=ACCENT;btn.BorderSizePixel=0;btn.Text="OPEN";btn.TextColor3=Color3.fromRGB(0,0,0);btn.Font=Enum.Font.GothamBlack;btn.TextSize=10;btn.AutoButtonColor=false;btn.ZIndex=3;Instance.new("UICorner",btn).CornerRadius=UDim.new(1,0);local opn=Instance.new("UIStroke",btn);opn.Color=ICE;opn.Thickness=1;opn.Transparency=0.34;btn.MouseEnter:Connect(function() TS:Create(opn,TweenInfo.new(0.12),{Transparency=0.02}):Play() end);btn.MouseLeave:Connect(function() TS:Create(opn,TweenInfo.new(0.12),{Transparency=0.34}):Play() end);btn.Activated:Connect(function() if _anyKeyListening then return end;if setBlessLaggerPanelVisible then setBlessLaggerPanelVisible(true) end end) end
+		do local row=mkRow(mainPage,ROW_H);mkLabel(row,"Fondos Bxyan Hub🕷️");local btn=Instance.new("TextButton",row);btn.Size=UDim2.new(0,86,0,22);btn.Position=UDim2.new(1,-94,0.5,-11);btn.BackgroundColor3=ACCENT;btn.BorderSizePixel=0;btn.Text="OPEN";btn.TextColor3=Color3.fromRGB(0,0,0);btn.Font=Enum.Font.GothamBlack;btn.TextSize=10;btn.AutoButtonColor=false;btn.ZIndex=3;Instance.new("UICorner",btn).CornerRadius=UDim.new(1,0);local opn=Instance.new("UIStroke",btn);opn.Color=ICE;opn.Thickness=1;opn.Transparency=0.34;btn.MouseEnter:Connect(function() TS:Create(opn,TweenInfo.new(0.12),{Transparency=0.02}):Play() end);btn.MouseLeave:Connect(function() TS:Create(opn,TweenInfo.new(0.12),{Transparency=0.34}):Play() end);setFondosBtnText=function(open) btn.Text=open and "CLOSE" or "OPEN" end;setFondosBtnText(fondosPanelOpen);btn.Activated:Connect(function() if _anyKeyListening then return end;if setFondosPanelVisible then setFondosPanelVisible(not fondosPanelOpen) end end) end	do local row=mkRow(mainPage,ROW_H);mkLabel(row,"Bxyan Lagger🕷️");local btn=Instance.new("TextButton",row);btn.Size=UDim2.new(0,86,0,22);btn.Position=UDim2.new(1,-94,0.5,-11);btn.BackgroundColor3=ACCENT;btn.BorderSizePixel=0;btn.Text="OPEN";btn.TextColor3=Color3.fromRGB(0,0,0);btn.Font=Enum.Font.GothamBlack;btn.TextSize=10;btn.AutoButtonColor=false;btn.ZIndex=3;Instance.new("UICorner",btn).CornerRadius=UDim.new(1,0);local opn=Instance.new("UIStroke",btn);opn.Color=ICE;opn.Thickness=1;opn.Transparency=0.34;btn.MouseEnter:Connect(function() TS:Create(opn,TweenInfo.new(0.12),{Transparency=0.02}):Play() end);btn.MouseLeave:Connect(function() TS:Create(opn,TweenInfo.new(0.12),{Transparency=0.34}):Play() end);btn.Activated:Connect(function() if _anyKeyListening then return end;if setBlessLaggerPanelVisible then setBlessLaggerPanelVisible(true) end end) end
 	do local row=mkRow(mainPage,ROW_H);mkLabel(row,"Animaciones");local btn=Instance.new("TextButton",row);btn.Size=UDim2.new(0,86,0,22);btn.Position=UDim2.new(1,-94,0.5,-11);btn.BackgroundColor3=ACCENT;btn.BorderSizePixel=0;btn.Text="OPEN";btn.TextColor3=Color3.fromRGB(0,0,0);btn.Font=Enum.Font.GothamBlack;btn.TextSize=10;btn.AutoButtonColor=false;btn.ZIndex=3;Instance.new("UICorner",btn).CornerRadius=UDim.new(1,0);local opn=Instance.new("UIStroke",btn);opn.Color=ICE;opn.Thickness=1;opn.Transparency=0.34;btn.MouseEnter:Connect(function() TS:Create(opn,TweenInfo.new(0.12),{Transparency=0.02}):Play() end);btn.MouseLeave:Connect(function() TS:Create(opn,TweenInfo.new(0.12),{Transparency=0.34}):Play() end);btn.Activated:Connect(function() if _anyKeyListening then return end;if setAnimationsPanelVisible then setAnimationsPanelVisible(true) end end) end
 	if setHideMobileVisual then setHideMobileVisual(hideMobileButtons) end
 	if setEditMobileVisual then setEditMobileVisual(editMobileButtons) end
