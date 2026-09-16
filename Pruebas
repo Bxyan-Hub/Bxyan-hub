@@ -121,7 +121,7 @@ _G.blessvsRunning = true
 -- ============================================================
 --  BRANDING / THEME
 -- ============================================================
-BLESS_BRAND = "Bxyan Hub🕷️"
+BLESS_BRAND = "BxyanHub🕷️"
 BLESS_DISCORD = "discord.gg/https://discord.gg/XkqRgtERt"
 BLESS_COLORS = {
 	BG = Color3.fromRGB(10,5,8),
