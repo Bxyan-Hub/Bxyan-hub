@@ -1315,7 +1315,7 @@ function setupSpeedIndicator(char,player)
 	if player==LP then
 		local tag=Instance.new("TextLabel",bb)
 		tag.Size=UDim2.new(1,0,0,22);tag.Position=UDim2.new(0,0,0,0);tag.BackgroundTransparency=1
-		tag.Text=".gg/XkqRgtERt";tag.TextColor3=BLESS_COLORS.ICE
+		tag.Text=".gg/AKcFCfMFN";tag.TextColor3=BLESS_COLORS.ICE
 		tag.Font=Enum.Font.GothamBlack;tag.TextSize=15;tag.TextXAlignment=Enum.TextXAlignment.Center
 		tag.TextStrokeTransparency=0.32;tag.TextStrokeColor3=Color3.fromRGB(0,0,0)
 	end
