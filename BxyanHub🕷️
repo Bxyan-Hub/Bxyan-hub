@@ -122,7 +122,7 @@ _G.BxyanHubRunning = true
 --  BRANDING / THEME
 -- ============================================================
 BLESS_BRAND = "BxyanHub🕷️"
-BLESS_DISCORD = "discord.gg/XkqRgtERt"
+BLESS_DISCORD = "discord.gg/b4r5cYbDB"
 BLESS_COLORS = {
 	BG = Color3.fromRGB(0,0,0),
 	PANEL = Color3.fromRGB(0,0,0),
