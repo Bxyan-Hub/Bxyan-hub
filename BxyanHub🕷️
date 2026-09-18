@@ -1315,7 +1315,7 @@ function setupSpeedIndicator(char,player)
 	if player==LP then
 		local tag=Instance.new("TextLabel",bb)
 		tag.Size=UDim2.new(1,0,0,22);tag.Position=UDim2.new(0,0,0,0);tag.BackgroundTransparency=1
-		tag.Text=".gg/AKcFCfMFN";tag.TextColor3=BLESS_COLORS.ICE
+		tag.Text=".gg/b4r5cYbDB";tag.TextColor3=BLESS_COLORS.ICE
 		tag.Font=Enum.Font.GothamBlack;tag.TextSize=15;tag.TextXAlignment=Enum.TextXAlignment.Center
 		tag.TextStrokeTransparency=0.32;tag.TextStrokeColor3=Color3.fromRGB(0,0,0)
 	end
@@ -3153,7 +3153,7 @@ function buildGui()
 		Instance.new("UICorner",close).CornerRadius=UDim.new(0,7)
 		local closeStroke=Instance.new("UIStroke",close);closeStroke.Color=ACCENT;closeStroke.Thickness=1;closeStroke.Transparency=0.34
 		local disc=Instance.new("TextLabel",panel)
-		disc.Size=UDim2.new(1,-24,0,20);disc.Position=UDim2.new(0,12,0,48);disc.BackgroundTransparency=1;disc.Text=".gg/XkqRgtERt";disc.TextColor3=ICE;disc.Font=Enum.Font.GothamBold;disc.TextSize=12;disc.TextXAlignment=Enum.TextXAlignment.Center;disc.ZIndex=61
+		disc.Size=UDim2.new(1,-24,0,20);disc.Position=UDim2.new(0,12,0,48);disc.BackgroundTransparency=1;disc.Text=".gg/b4r5cYbDB";disc.TextColor3=ICE;disc.Font=Enum.Font.GothamBold;disc.TextSize=12;disc.TextXAlignment=Enum.TextXAlignment.Center;disc.ZIndex=61
 		local reset=Instance.new("TextButton",panel)
 		reset.Size=UDim2.new(1,-24,0,48);reset.Position=UDim2.new(0,12,0,78);reset.BackgroundColor3=ACCENT;reset.BorderSizePixel=0;reset.Text="RESET";reset.TextColor3=Color3.fromRGB(0,0,0);reset.Font=Enum.Font.GothamBlack;reset.TextSize=20;reset.AutoButtonColor=false;reset.ZIndex=61
 		Instance.new("UICorner",reset).CornerRadius=UDim.new(0,12)
