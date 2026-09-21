@@ -3424,7 +3424,7 @@ function buildGui()
 	-- Imagen de fondo (ZIndex=1 para que sea la base visible)
 	local bgImg=Instance.new("ImageLabel",main)
 	bgImg.Size=UDim2.new(1,0,1,0);bgImg.Position=UDim2.new(0,0,0,0)
-	bgImg.Image="rbxassetid://122866363664016"
+	bgImg.Image="rbxthumb://type=Asset&id=75718345737471&w=420&h=420"
 	bgImgRef=bgImg
 	bgImg.ImageTransparency=0.0;bgImg.ScaleType=Enum.ScaleType.Crop
 	bgImg.BackgroundColor3=BG;bgImg.BackgroundTransparency=0;bgImg.BorderSizePixel=0;bgImg.ZIndex=1
@@ -3578,7 +3578,7 @@ function buildGui()
 	-- Logo con imagen de fondo del hub
 	local logo=Instance.new("ImageLabel",hdr)
 	logo.Size=UDim2.new(0,LOGO,0,LOGO);logo.Position=UDim2.new(0,12,0,IsMobile and 11 or 12);logo.BackgroundColor3=Color3.fromRGB(20,5,8);logo.BorderSizePixel=0;logo.ZIndex=3
-	logo.Image="rbxassetid://13732866498";logo.ImageColor3=Color3.fromRGB(255,255,255);logo.ScaleType=Enum.ScaleType.Crop
+	logo.Image="rbxthumb://type=Asset&id=75718345737471&w=420&h=420";logo.ImageColor3=Color3.fromRGB(255,255,255);logo.ScaleType=Enum.ScaleType.Crop
 	Instance.new("UICorner",logo).CornerRadius=UDim.new(0,8)
 	local logoStroke=Instance.new("UIStroke",logo);logoStroke.Color=ACCENT;logoStroke.Thickness=1.5;logoStroke.Transparency=0.1
 	-- TÃ­tulo con gradiente de texto
