@@ -441,7 +441,7 @@ function CarrySystem:isRunning() return self._heartbeatConn ~= nil end
 function CarrySystem:getCurrentSpeed() return self:getActiveSpeed() end
 
 local COLOR_THEMES = {
-    ["Gris"] = Color3.fromRGB(180, 180, 190),
+    ["Gris"] = Color3.fromRGB(255, 0, 0),
     ["Morado"] = Color3.fromRGB(160, 100, 220),
     ["Azul"] = Color3.fromRGB(80, 150, 255),
     ["Rosado"] = Color3.fromRGB(255, 120, 180),
@@ -5127,8 +5127,8 @@ function buildGui()
     end)
 
     miniBtn = Instance.new("TextButton", gui)
-    miniBtn.Size = UDim2.new(0, 118, 0, 30)
-    miniBtn.Position = UDim2.new(0, 16, 0, 58)
+    miniBtn.Size = UDim2.new(0, 118, 0, 50)
+    miniBtn.Position = UDim2.new(0, 16, 0, 120)
     miniBtn.BackgroundColor3 = BG2
     miniBtn.BackgroundTransparency = 0
     miniBtn.BorderSizePixel = 0
@@ -5158,7 +5158,7 @@ function buildGui()
     hideGui = function()
         if slideTween then slideTween:Cancel() end
         if not main or not main.Visible then return end
-        local targetPos = UDim2.new(0, -GUI_W - 20, 0, 2)
+        local targetPos = UDim2.new(0, -GUI_W - 30, 0, 1)
         slideTween = TS:Create(main, TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Position = targetPos})
         slideTween:Play()
         slideTween.Completed:Connect(function()
@@ -5249,7 +5249,7 @@ function buildGui()
                 b.BackgroundColor3 = Color3.fromRGB(0,0,0)
             end
             btn.TextColor3 = getThemeColor()
-            btn.BackgroundColor3 = Color3.fromRGB(20,20,20)
+            btn.BackgroundColor3 = Color3.fromRGB(255,0,0)
         end)
 
         table.insert(tabButtons, btn)
